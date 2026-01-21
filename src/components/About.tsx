@@ -34,7 +34,7 @@ const About = () => {
                 Our Story
               </span>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-2 mb-6 font-serif">
-                The Heart of 
+                The Heart of
                 <span className="text-amber-600"> Authentic Chai</span>
               </h2>
               <div className="w-16 h-1 bg-amber-600 rounded-full mb-8"></div>
@@ -42,9 +42,9 @@ const About = () => {
 
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
               <p>
-                In the bustling streets of Punjab, where the aroma of spices fills the air and stories unfold over steaming cups, lies the essence of true Indian chai culture. For generations, chai has been more than just a beverage – it's a ritual, a connection, a moment of peace in our busy lives.
+                In the bustling streets of Punjab, where the aroma of spices fills the air and stories unfold over steaming cups, lies the essence of true Indian chai culture. For generations, chai has been more than just a beverage – it&apos;s a ritual, a connection, a moment of peace in our busy lives.
               </p>
-              
+
               <p>
                 At <strong className="text-amber-700">Chah E Piaa De</strong>, we honor this beautiful tradition by bringing you the most authentic chai experience. Every cup is a journey back to our roots, crafted with time-honored recipes passed down through families, perfected with love, and served with the warmth that only comes from genuine passion.
               </p>
@@ -71,7 +71,7 @@ const About = () => {
                   alt="Traditional chai preparation with copper kettle"
                   className="w-full h-96 lg:h-[500px] object-cover"
                 />
-                
+
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-amber-900/20 to-transparent"></div>
               </div>
@@ -79,11 +79,11 @@ const About = () => {
               {/* Floating decorative elements */}
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-amber-100 rounded-full opacity-60 -z-10"></div>
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-amber-200 rounded-full opacity-40 -z-10"></div>
-              
+
               {/* Quote card */}
               <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-warm">
                 <blockquote className="text-gray-800 italic text-center">
-                  "Chai is not just a drink, it's a emotion that brings people together"
+                  &quot;Chai is not just a drink, it&apos;s a emotion that brings people together&quot;
                 </blockquote>
                 <cite className="text-amber-600 text-sm font-semibold mt-2 block text-center">
                   - Traditional Punjabi Wisdom

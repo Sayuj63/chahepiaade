@@ -5,15 +5,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @layer base {
-  * {
-    @apply border-border;
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
   }
-  
+
   body {
-    @apply bg-background text-foreground;
+    background-color: #f5f1eb;
+    color: #2d2d2d;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
@@ -23,19 +43,19 @@
   .fade-in {
     animation: fadeIn 0.8s ease-out forwards;
   }
-  
+
   .fade-up {
     animation: fadeUp 0.8s ease-out forwards;
   }
-  
+
   .slide-in-left {
     animation: slideInLeft 0.8s ease-out forwards;
   }
-  
+
   .slide-in-right {
     animation: slideInRight 0.8s ease-out forwards;
   }
-  
+
   .scale-in {
     animation: scaleIn 0.6s ease-out forwards;
   }
@@ -45,6 +65,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -55,6 +76,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -66,6 +88,7 @@
     opacity: 0;
     transform: translateX(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -77,6 +100,7 @@
     opacity: 0;
     transform: translateX(50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -88,6 +112,7 @@
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -123,9 +148,33 @@
 
 /* Premium button styles */
 .btn-primary {
-  @apply bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full transition-premium shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+  background-color: #d97706;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(0);
+}
+
+.btn-primary:hover {
+  background-color: #b45309;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-0.25rem);
 }
 
 .btn-secondary {
-  @apply border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white font-semibold py-3 px-8 rounded-full transition-premium;
+  border: 2px solid #d97706;
+  color: #d97706;
+  background-color: transparent;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+  background-color: #d97706;
+  color: white;
 }

@@ -99,9 +99,8 @@ const VisitUs = () => {
           {locations.map((location, index) => (
             <div
               key={location.name}
-              className={`group bg-white rounded-3xl overflow-hidden shadow-premium hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${
-                location.featured ? 'lg:col-span-3 lg:max-w-md lg:mx-auto' : ''
-              } ${isVisible ? 'fade-up' : 'opacity-0 translate-y-10'}`}
+              className={`group bg-white rounded-3xl overflow-hidden shadow-premium hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${location.featured ? 'lg:col-span-3 lg:max-w-md lg:mx-auto' : ''
+                } ${isVisible ? 'fade-up' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               {/* Featured Badge */}
@@ -183,7 +182,7 @@ const VisitUs = () => {
         {/* Call to Action */}
         <div className={`text-center mt-16 transition-all duration-1000 delay-800 ${isVisible ? 'fade-up' : 'opacity-0 translate-y-10'}`}>
           <p className="text-amber-100 text-lg mb-6">
-            Can't visit us? Order online for delivery
+            Can&apos;t visit us? Order online for delivery
           </p>
           <button className="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-amber-900">
             Order Online

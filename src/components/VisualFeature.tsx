@@ -63,11 +63,11 @@ const VisualFeature = () => {
 
             <div className="space-y-6 text-gray-200 text-lg leading-relaxed">
               <p>
-                Watch as our master chaiwalas pour steaming hot chai from great heights, creating the perfect foam and releasing the most divine aromas. This isn't just preparation – it's an art form, passed down through generations.
+                Watch as our master chaiwalas pour steaming hot chai from great heights, creating the perfect foam and releasing the most divine aromas. This isn&apos;t just preparation – it&apos;s an art form, passed down through generations.
               </p>
-              
+
               <p>
-                From the first pour to the last sip, every moment is designed to awaken your senses and connect you with centuries of Indian tea culture. The sound of chai hitting the cup, the aroma of spices, the warmth spreading through your hands – it's a sensory experience like no other.
+                From the first pour to the last sip, every moment is designed to awaken your senses and connect you with centuries of Indian tea culture. The sound of chai hitting the cup, the aroma of spices, the warmth spreading through your hands – it&apos;s a sensory experience like no other.
               </p>
             </div>
 
@@ -98,7 +98,7 @@ const VisualFeature = () => {
                 <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
                   <div className="text-center text-white">
                     <svg className="w-24 h-24 mx-auto mb-6 text-amber-400" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M6 2C4.9 2 4 2.9 4 4v14c0 1.1.9 2 2 2h10c2.2 0 4-1.8 4-4V8l-6-6H6zm0 2h8v2H6V4zm0 14h8v2H6v-2zm10-2c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm0-3c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm0-3c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z"/>
+                      <path d="M6 2C4.9 2 4 2.9 4 4v14c0 1.1.9 2 2 2h10c2.2 0 4-1.8 4-4V8l-6-6H6zm0 2h8v2H6V4zm0 14h8v2H6v-2zm10-2c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm0-3c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm0-3c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z" />
                     </svg>
                     <h3 className="text-2xl font-bold mb-4">Traditional Brewing</h3>
                     <p className="text-gray-300">

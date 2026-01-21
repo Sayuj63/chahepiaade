@@ -6,7 +6,8 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    const timer = setTimeout(() => setIsVisible(true), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollToMenu = () => {
@@ -20,7 +21,7 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with subtle gradient */}
       <div className="absolute inset-0 gradient-warm"></div>
-      
+
       {/* Background pattern overlay */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-amber-800/20 to-transparent"></div>
