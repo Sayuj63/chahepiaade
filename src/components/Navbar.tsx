@@ -25,47 +25,65 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+          ? 'bg-white/90 backdrop-blur-xl shadow-luxury py-3'
+          : 'bg-transparent py-6'
       }`}
     >
+      {/* Top decorative line */}
+      <div className={`absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/50 to-transparent transition-opacity duration-700 ${isScrolled ? 'opacity-100' : 'opacity-0'}`}></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className={`text-2xl lg:text-3xl font-bold font-serif transition-colors duration-300 ${
-              isScrolled ? 'text-amber-800' : 'text-white'
+            <h1 className={`text-2xl lg:text-3xl font-bold font-serif tracking-tight transition-all duration-500 ${
+              isScrolled ? 'text-[#1a1a1a]' : 'text-white'
             }`}>
-              Chah E Piaa De
+              <span>Chah E</span>
+              <span className={`${isScrolled ? 'text-[#d4af37]' : 'text-[#d4af37]'}`}> Piaa De</span>
             </h1>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {['Home', 'About', 'Menu', 'Visit Us', 'Contact'].map((item) => (
+          <div className="hidden lg:flex items-center">
+            <div className="ml-10 flex items-center space-x-1">
+              {[
+                { name: 'Home', id: 'home' },
+                { name: 'About', id: 'about' },
+                { name: 'Collection', id: 'menu' },
+                { name: 'Visit Us', id: 'visit-us' },
+                { name: 'Contact', id: 'contact' }
+              ].map((item) => (
                 <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 group ${
-                    isScrolled ? 'text-gray-700 hover:text-amber-600' : 'text-white hover:text-amber-200'
+                  key={item.name}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`relative px-5 py-2 text-sm font-medium tracking-wide transition-all duration-300 group ${
+                    isScrolled ? 'text-gray-700' : 'text-white/90'
                   }`}
                 >
-                  {item}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="relative z-10">{item.name}</span>
+                  <span className={`absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#d4af37] to-[#f4e5b2] transition-all duration-300 group-hover:w-full rounded-full`}></span>
                 </button>
               ))}
             </div>
+
+            {/* CTA Button */}
+            <button
+              onClick={() => scrollToSection('menu')}
+              className="ml-8 px-6 py-2.5 bg-gradient-to-r from-[#d4af37] to-[#c9a227] text-[#0a0a0a] text-sm font-semibold rounded-full transition-all duration-300 hover:shadow-gold transform hover:scale-105"
+            >
+              Order Now
+            </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 rounded-md transition-colors duration-300 ${
-                isScrolled ? 'text-gray-700 hover:text-amber-600' : 'text-white hover:text-amber-200'
+              className={`p-2 rounded-xl transition-all duration-300 ${
+                isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
               }`}
             >
               <svg
@@ -86,17 +104,33 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md rounded-lg mt-2 shadow-lg">
-              {['Home', 'About', 'Menu', 'Visit Us', 'Contact'].map((item) => (
+          <div className="lg:hidden mt-4 overflow-hidden transition-all duration-300">
+            <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-luxury border border-[#d4af37]/10 p-6">
+              <div className="space-y-1">
+                {[
+                  { name: 'Home', id: 'home' },
+                  { name: 'About', id: 'about' },
+                  { name: 'Collection', id: 'menu' },
+                  { name: 'Visit Us', id: 'visit-us' },
+                  { name: 'Contact', id: 'contact' }
+                ].map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.id)}
+                    className="block w-full text-left px-4 py-3 text-gray-700 hover:text-[#d4af37] hover:bg-[#faf8f5] rounded-xl transition-all duration-300 font-medium"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+              <div className="mt-4 pt-4 border-t border-gray-100">
                 <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                  className="block w-full text-left px-3 py-2 text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-md transition-colors duration-300"
+                  onClick={() => scrollToSection('menu')}
+                  className="w-full px-6 py-3 bg-gradient-to-r from-[#d4af37] to-[#c9a227] text-[#0a0a0a] font-semibold rounded-full transition-all duration-300 hover:shadow-gold"
                 >
-                  {item}
+                  Order Now
                 </button>
-              ))}
+              </div>
             </div>
           </div>
         )}

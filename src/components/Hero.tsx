@@ -19,80 +19,113 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with subtle gradient */}
-      <div className="absolute inset-0 gradient-warm"></div>
+      {/* Background with luxury gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#faf8f5] via-[#f5f1eb] to-[#ebe6dd]"></div>
 
-      {/* Background pattern overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-800/20 to-transparent"></div>
-        <svg className="absolute bottom-0 left-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse">
-              <circle cx="25" cy="25" r="1" fill="currentColor" opacity="0.1" />
-              <circle cx="75" cy="75" r="1" fill="currentColor" opacity="0.1" />
-              <circle cx="50" cy="10" r="0.5" fill="currentColor" opacity="0.05" />
-              <circle cx="10" cy="60" r="0.5" fill="currentColor" opacity="0.05" />
-              <circle cx="90" cy="40" r="0.5" fill="currentColor" opacity="0.05" />
-            </pattern>
-          </defs>
-          <rect width="100" height="100" fill="url(#grain)" />
-        </svg>
-      </div>
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 pattern-diamond opacity-40"></div>
+
+      {/* Decorative gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl float"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-amber-200/20 rounded-full blur-3xl float" style={{ animationDelay: '2s' }}></div>
+
+      {/* Gold decorative line */}
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[1px] h-32 bg-gradient-to-b from-[#d4af37] to-transparent opacity-50"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        {/* Small label */}
+        <div className={`transition-all duration-1200 ${isVisible ? 'fade-up' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-flex items-center mb-8 px-6 py-2 rounded-full bg-white/50 backdrop-blur-sm border border-[#d4af37]/20">
+            <span className="w-2 h-2 bg-[#d4af37] rounded-full mr-2 shimmer"></span>
+            <span className="text-sm font-medium tracking-widest text-[#8b6914] uppercase">
+              Est. 1974 • Amritsar, Punjab
+            </span>
+          </div>
+        </div>
+
         {/* Brand Logo/Name */}
-        <div className={`transition-all duration-1000 ${isVisible ? 'fade-in' : 'opacity-0'}`}>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-amber-900 mb-4 font-serif">
-            Chah E Piaa De
+        <div className={`transition-all duration-1200 delay-200 ${isVisible ? 'fade-up' : 'opacity-0 translate-y-12'}`}>
+          <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 font-serif tracking-tight">
+            <span className="text-[#1a1a1a]">Chah E</span>
+            <span className="text-gradient-gold"> Piaa De</span>
           </h1>
-          <div className="w-24 h-1 bg-amber-600 mx-auto mb-8 rounded-full"></div>
+          <div className="flex items-center justify-center space-x-4">
+            <div className="h-[2px] w-24 bg-gradient-to-r from-transparent to-[#d4af37]"></div>
+            <div className="w-16 h-[2px] bg-[#d4af37] shimmer"></div>
+            <div className="h-[2px] w-24 bg-gradient-to-l from-transparent to-[#d4af37]"></div>
+          </div>
         </div>
 
         {/* Tagline */}
-        <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'fade-up' : 'opacity-0 translate-y-10'}`}>
-          <p className="text-xl sm:text-2xl lg:text-3xl text-amber-800 font-light mb-2">
-            Where every sip tells a story
+        <div className={`transition-all duration-1200 delay-400 ${isVisible ? 'fade-up' : 'opacity-0 translate-y-12'}`}>
+          <p className="text-2xl sm:text-3xl lg:text-4xl text-[#2d2d2d] font-light mb-6 font-serif italic">
+            Where Every Cup Tells a Story
           </p>
-          <p className="text-lg sm:text-xl text-amber-700 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-[#5a5a5a] mb-12 max-w-3xl mx-auto leading-relaxed font-light">
             Experience the authentic taste of traditional Indian chai, crafted with love and the finest spices from the heart of Punjab
           </p>
         </div>
 
-        {/* CTA Button */}
-        <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'fade-up' : 'opacity-0 translate-y-10'}`}>
-          <button
-            onClick={scrollToMenu}
-            className="btn-primary text-lg px-12 py-4 inline-flex items-center group"
-          >
-            Explore Our Chai
-            <svg
-              className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+        {/* CTA Buttons */}
+        <div className={`transition-all duration-1200 delay-600 ${isVisible ? 'fade-up' : 'opacity-0 translate-y-12'}`}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={scrollToMenu}
+              className="btn-luxury text-lg px-10 py-4 inline-flex items-center group font-medium tracking-wide"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
+              Explore Our Collection
+              <svg
+                className="ml-3 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+            <button className="btn-luxury-outline text-lg px-10 py-4 font-medium tracking-wide">
+              Our Heritage
+            </button>
+          </div>
         </div>
 
         {/* Decorative Elements */}
-        <div className={`absolute top-20 left-10 w-2 h-2 bg-amber-600 rounded-full opacity-60 transition-all duration-1000 delay-1000 ${isVisible ? 'scale-in' : 'opacity-0 scale-0'}`}></div>
-        <div className={`absolute top-32 right-16 w-3 h-3 bg-amber-500 rounded-full opacity-40 transition-all duration-1000 delay-1200 ${isVisible ? 'scale-in' : 'opacity-0 scale-0'}`}></div>
-        <div className={`absolute bottom-40 left-20 w-1 h-1 bg-amber-700 rounded-full opacity-50 transition-all duration-1000 delay-1400 ${isVisible ? 'scale-in' : 'opacity-0 scale-0'}`}></div>
-        <div className={`absolute bottom-60 right-32 w-2 h-2 bg-amber-400 rounded-full opacity-60 transition-all duration-1000 delay-1600 ${isVisible ? 'scale-in' : 'opacity-0 scale-0'}`}></div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-2000 ${isVisible ? 'fade-up' : 'opacity-0'}">
-        <div className="flex flex-col items-center text-amber-700">
-          <span className="text-sm mb-2 font-medium">Discover More</span>
-          <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+        <div className="absolute top-1/4 left-10 hidden lg:block">
+          <div className="w-1 h-24 bg-gradient-to-b from-[#d4af37]/50 to-transparent rounded-full float" style={{ animationDelay: '1s' }}></div>
+        </div>
+        <div className="absolute top-1/3 right-10 hidden lg:block">
+          <div className="w-1 h-32 bg-gradient-to-b from-[#d4af37]/30 to-transparent rounded-full float" style={{ animationDelay: '3s' }}></div>
+        </div>
+        <div className="absolute bottom-1/3 left-20 hidden lg:block">
+          <div className="w-20 h-[1px] bg-gradient-to-r from-[#d4af37]/40 to-transparent float"></div>
+        </div>
+        <div className="absolute bottom-1/4 right-20 hidden lg:block">
+          <div className="w-16 h-[1px] bg-gradient-to-l from-[#d4af37]/30 to-transparent float" style={{ animationDelay: '4s' }}></div>
         </div>
       </div>
+
+      {/* Bottom decorative section */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+          {/* Scroll indicator */}
+          <div className={`flex flex-col items-center transition-all duration-1200 delay-800 ${isVisible ? 'fade-up' : 'opacity-0 translate-y-12'}`}>
+            <span className="text-sm font-medium tracking-widest text-[#8b6914] uppercase mb-4">Scroll to Discover</span>
+            <div className="relative w-6 h-10 border-2 border-[#d4af37]/50 rounded-full">
+              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-1 h-2 bg-[#d4af37] rounded-full animate-bounce"></div>
+            </div>
+          </div>
+
+          {/* Gold line at bottom */}
+          <div className="divider-gold mt-8 opacity-50"></div>
+        </div>
+      </div>
+
+      {/* Corner decorative elements */}
+      <div className="absolute top-0 left-0 w-32 h-32 border-l border-t border-[#d4af37]/20 rounded-tl-3xl"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 border-r border-t border-[#d4af37]/20 rounded-tr-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-32 h-32 border-l border-b border-[#d4af37]/20 rounded-bl-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-32 h-32 border-r border-b border-[#d4af37]/20 rounded-br-3xl"></div>
     </section>
   );
 };
